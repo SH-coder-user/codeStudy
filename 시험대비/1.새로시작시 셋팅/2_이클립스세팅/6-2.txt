@@ -1,0 +1,9 @@
+--이클립스에 오라클 연결 설정--
+
+오라클 폴더 - Product - 버전명(11.2.0) - server - jdbc - lib 안의 objdbc6.jar 파일
+
+--이클립스에 톰캣 연결 설정--
+
+apache - tomcat - 버전명(8.5.42) - lib 안의 servlet - api.jar 파일
+
+이 두 파일을 java폴더 - jdk버전(1.8.0_191) - jre - lib - ext 폴더 안에 붙여넣기

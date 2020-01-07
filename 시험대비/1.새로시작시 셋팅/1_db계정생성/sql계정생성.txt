@@ -1,0 +1,14 @@
+1. cmd 창 
+
+2. sqlplus  엔터   
+
+아이디 : sys as sysdba =====>관리자 권한 접속
+비번 : 입력없이 엔터
+
+3. create user 계정 identified by 암호;  =====>아이디 생성
+
+3-1.계정이 있을 경우
+
+drop user 계정 cascade;  =====>아이디 삭제 후 다시 3번으로 또는
+
+alter user 계정 identified by  바꿀비밀번호 =====>비밀번호 바꾸기
