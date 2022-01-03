@@ -53,14 +53,14 @@
 // 'y'
 
 #include<stdio.h>
-
+ 
 void main(){
     char a[30];
     scanf("%s",&a);
     int i;
     for (i = 0; a[i]!='\0'; i++)
     {
-        printf("\'%c\'",a[i]);
+        printf("\'%c\'\n",a[i]);
     }
     
 
