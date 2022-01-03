@@ -1,4 +1,30 @@
 1. 깃헙 사용법 익히기
-    1-1. VS 코드로 셋팅법
-    1-2. VS에서  파일 업로드 하는 법
+    1-1. VS 코드로 셋팅법(C/C++ 언어전용)
+
+        비주얼 스튜디오 코드 다운 : https://code.visualstudio.com/download
+        설치 후 -> 확장'돋보기모양' 클릭해서 C/C++ 검색해서 다운로드
+
+        mingw 다운로드 : https://sourceforge.net/projects/mingw/
+        
+        다운로드 받다가 중간즈음
+        MinGW Installation Manager 창이 뜨면서 옵션 선택 시
+            mingw-developer-toolkit
+            mingw32-base
+            mingw32-gcc-g++
+            msys-base(위의 mingw-developer-toolkit 할 때 자동설정됨)
+            우클릭 해서 mark for Installation
+            해주고 왼쪽 위의 Installation메뉴 클릭해서 apply changes 메뉴
+            클릭해서 설치 완료하기.
+        
+        PATH 환경설정하기 : 시작창 돋보기 검색눌러서 "시스템 환경 변수 편집"
+        메뉴=시스템 속성 들어가기 -> 환경변수 클릭 -> 시스템 변수(S)에 Path찾아서
+        편집 누르기-> 새로 만들기->C:\MinGW\bin (mingw 경로 추가해서 넣기)
+
+        VS CODE 다시 껏다 키기
+        세팅 확인하기 : cmd 창 열어서 gcc -v 엔터 치면 정보가 떠야함.
+
+        Git 설치 : https://git-scm.com/
+
+    1-2. VS에서  파일 업로드(git) 하는 법
+        
     2-1. 파일 협업 방법
