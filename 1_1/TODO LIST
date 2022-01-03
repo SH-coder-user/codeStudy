@@ -33,7 +33,9 @@
         keybindings.json(첨부)
         VS 메뉴에서
         파일(File) -> 기본설정(Preferences) ->바로가기 키(Keyboard Shortcuts)
-        keybindings.json 검색해서 해당 파일 연 뒤 첨부된 파일 복붙후 저장.
+        keybindings.json 검색해서 
+        검색이 안될 시 우측상단의 검색창 위의 메뉴중 폴더 표시부분(JSON바로가기) 클릭해
+        파일추가해당 파일 연 뒤 첨부된 파일 복붙후 저장.
 
         기본적인 프로그래밍 해본뒤 
         Ctrl + Alt + C => 컴파일

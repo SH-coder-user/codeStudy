@@ -1,3 +1,5 @@
+
+//에러있음 무한루프 도는현상.확인 필요
 #include<stdio.h>
 
 int card_convr(unsigned x, int n, char d[])
@@ -43,7 +45,7 @@ int main(void)
         printf("입니다.\n");
         printf("한번 더 할까요? 1 ... 예 / 0 ... 아니오");
         scanf("%d",&retry);
-    }while (retry=1);
+    }while(retry == 1);
     
     return 0;
 }    
