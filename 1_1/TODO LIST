@@ -22,9 +22,27 @@
 
         VS CODE 다시 껏다 키기
         세팅 확인하기 : cmd 창 열어서 gcc -v 엔터 치면 정보가 떠야함.
+        
+        VS 코드 셋팅
+        1-1-1. 기본빌드 작업 구성
+            tasks.json파일(첨부) Ctrl+Shift+B 눌러서
+            tasks.json 파일 만들기 클릭 후 Others 눌러서 기본설정이 되어있는 
+            tasks.json 파일이 생성될때 첨부된 파일 내용을 붙여넣기 한 후 저장.
+       
+        1-1-2. 컴파일, 실행 단축기 셋팅
+        keybindings.json(첨부)
+        VS 메뉴에서
+        파일(File) -> 기본설정(Preferences) ->바로가기 키(Keyboard Shortcuts)
+        keybindings.json 검색해서 해당 파일 연 뒤 첨부된 파일 복붙후 저장.
+
+        기본적인 프로그래밍 해본뒤 
+        Ctrl + Alt + C => 컴파일
+        Ctrl + Alt + R => 실행 해보기
+        
 
         Git 설치 : https://git-scm.com/
 
     1-2. VS에서  파일 업로드(git) 하는 법
-        
+        github 아이디 있어야함
+        VS켠 상태에서 연결고리
     2-1. 파일 협업 방법
