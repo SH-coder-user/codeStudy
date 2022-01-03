@@ -1,4 +1,0 @@
-String sql = "select to_char(날짜컬럼,'yyyy-mm-dd') from 테이블"
-
-
-yyyy-mm-dd자리에 원하는 포맷형식을 첨부하면 됩니다.
