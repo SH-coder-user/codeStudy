@@ -64,13 +64,11 @@ void main()
     if (a%2==0)
     {
         printf("%d\n",a);
-    }
-    
+    }    
     if (b%2==0)
     {
         printf("%d\n",b);
     }
-
     if (c%2==0)
     {
         printf("%d\n",c);
