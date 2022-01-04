@@ -63,7 +63,10 @@ void main()
 
 reset:
     scanf("%d",&a);
-    printf("%d\n",a);
-    if(a!=0) goto reset;
-    
+    if (a!=0)
+    {
+        printf("%d\n",a);
+        goto reset;
+    }
+
 }
