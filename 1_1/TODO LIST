@@ -116,6 +116,8 @@
         // 현재 브랜치는 brchB 이다.
         # git add .
         # git commit -m "기능 구현 완료"
+        
+        이사이에 ctrl +s 눌러서 저장해줘야 브랜치에선 변경점이 표시된다.
 
         # git checkout master 마스터 브랜치로 바꾼뒤
         # git merge brchB 병합한다.(로컬폴더)
