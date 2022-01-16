@@ -52,16 +52,16 @@
 
 int main()
 {
-    int h,b,c,s;
+    float h,b,c,s;
     float e;
     
     do
     {
-        scanf("%d %d %d %d",&h,&b,&c,&s);
+        scanf("%f %f %f %f",&h,&b,&c,&s);
         /* code */
-    } while (h > 48001 && b>33 && c>6 && s > 6001);
+    } while (h > 48001 || b>33 || c>6 || s > 6001);
     
-    printf(".1%f MB",h * b * c * s);
+    printf("%.1f MB",(h * b * c * s)/(1024*1024*8)); //.1의 위치가 어디냐에 따라서 결과 확바뀜 주의할것
 
     return 0;
 }
