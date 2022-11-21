@@ -1,4 +1,4 @@
-/* 선형검색 */
+/* 선형검색 버전 2 */
 
 #include<stdio.h>
 #include <stdlib.h>
@@ -6,18 +6,15 @@
 /* 요소의 개수가 n인배열 a에서 key와 일치하는 요소를 선형 검색 */
 int search(const int a[], int n, int key){
 
-	int i=0;
-	while(1){
-		if (i==n)
+	int i;
+	for ( i = 0; i < n; i++)
+	{
+		if (a[i] == key)
 		{
-			return -1;
+			return i; /* 검색성공 */
 		}
-		if (a[i]== key)
-		{
-			return i; /* 검색 성공 */
-		}
-		i++;
 	}
+	return -1; /* 검색실패 */
 }
 
 int main(void)
