@@ -41,13 +41,18 @@ int main(void)
 	printf("검색 값 : ");
 	scanf("%d",&ky);
 
-	p = bsearch(&ky,x,nx,sizeof(int),(int(*)(const void *, const void *)) int_cmp);
+	p = bsearch(&ky, /* 검색값에 대한 포인터 */
+	x, /* 배열 */
+	nx, /* 요소의개수 */
+	sizeof(int), /* 요소의 크기 */
+	(int(*)(const void *, const void *)) int_cmp); /* 비교함수 */
 
 	if (p == NULL)
 	{
 		puts("검색에 실패했습니다.\n");
-	}else
+	}else{
 		printf("%d은(는) x[%d]에 있습니다.\n",ky, (int)(p-x));
+	}
 	free(x);
 	
 	return 0;
