@@ -1,0 +1,2 @@
+.bashrc 같은 곳에 
+export PATH=.:$PATH 추가

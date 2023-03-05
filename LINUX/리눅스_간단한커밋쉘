@@ -1,0 +1,6 @@
+gitgo.sh 쓰면됌
+날짜 해서 
+
+.bash_profile 또는 .profile 에 아래 내용 추가해서 사용하면 편함.
+alias 쓰고싶은명령어='/절대경로/gitgo.sh'
+
