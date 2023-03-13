@@ -10,6 +10,7 @@ int main() {
 
   if (my_status & ALIVE) {
     printf("I am ALIVE!! \n");
+    
   }
   if (my_status & WALKING) {
     printf("I am WALKING!! \n");

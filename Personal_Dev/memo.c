@@ -1,5 +1,5 @@
-/* ë¦¬ëˆ…ìŠ¤ë¡œ ì—…ë¬´ë¥¼ ë³´ë‹¤ ì´ìŠˆë‚˜ ì •ë¦¬í•  ë‚´ìš©ì´ ìƒê²¼ì„ ë•Œ ë¦¬ëˆ…ìŠ¤ì°½ ë‹«ê³  ë©”ëª¨ìž¥ ì—´ì–´ì„œ ì ì–´ì•¼í•˜ëŠ”
- ë²ˆê±°ë¡œì›€ ë•Œë¬¸ì— aliasë¡œ ë°”ë¡œ ë‚´ìš© ì ì–´ì„œ ì €ìž¥í•  ìˆ˜ ìžˆëŠ” ì‹œê°„ì´ ì²¨ë¶€ëœ ë©”ëª¨ìž¥(ë¡œê·¸)ë¥¼ ë§Œë“¤ì–´ ë³´ê¸°ë¡œ í•¨. */
+/* ¸®´ª½º·Î ¾÷¹«¸¦ º¸´Ù ÀÌ½´³ª Á¤¸®ÇÒ ³»¿ëÀÌ »ý°åÀ» ¶§ ¸®´ª½ºÃ¢ ´Ý°í ¸Þ¸ðÀå ¿­¾î¼­ Àû¾î¾ßÇÏ´Â
+ ¹ø°Å·Î¿ò ¶§¹®¿¡ alias·Î ¹Ù·Î ³»¿ë Àû¾î¼­ ÀúÀåÇÒ ¼ö ÀÖ´Â ½Ã°£ÀÌ Ã·ºÎµÈ ¸Þ¸ðÀå(·Î±×)¸¦ ¸¸µé¾î º¸±â·Î ÇÔ. */
 
 #include<stdio.h>
 #include<string.h>
@@ -8,10 +8,10 @@
 //#define DEBUG
 
 /*************************************************************************************
- * 	1. í”„ë¡œê·¸ëž¨ ì‹ë³„ìž : memo.c
- *  2. í”„ë¡œê·¸ëž¨ ê°œìš” : ë¡œê·¸íŒŒì¼ë¡œ ì €ìž¥ë˜ëŠ” ê°„ì´ ë©”ëª¨ìž¥
- *  3. ìž‘ì„±ì¼ : 2022.11.22
- *  4. ë³€ê²½ì´ë ¥ 
+ * 	1. ÇÁ·Î±×·¥ ½Äº°ÀÚ : memo.c
+ *  2. ÇÁ·Î±×·¥ °³¿ä : ·Î±×ÆÄÀÏ·Î ÀúÀåµÇ´Â °£ÀÌ ¸Þ¸ðÀå
+ *  3. ÀÛ¼ºÀÏ : 2022.11.22
+ *  4. º¯°æÀÌ·Â 
 *************************************************************************************/
 
 int findDate(int Cnum, char *buff);
@@ -20,28 +20,28 @@ int fileWrite(char *file);
 int main(){
 	char cbuff[1024], dbuff[1024];
 
-	printf("\t\t\të©”ëª¨ìž¥ìž…ë‹ˆë‹¤. ë¬¸ìž¥ì„ ìž…ë ¥í•´ì£¼ì„¸ìš”.(ê³„ì† ìž…ë ¥ê°€ëŠ¥)\
-	ê¸€ì„ ëë‚´ë ¤ë©´\"end\" ë¬¸ìž¥ ìž…ë ¥ ë˜ëŠ” ctrl + c í‚¤ë¡œ ì¢…ë£Œí•©ë‹ˆë‹¤.");
+	printf("\t\t\t¸Þ¸ðÀåÀÔ´Ï´Ù. ¹®ÀåÀ» ÀÔ·ÂÇØÁÖ¼¼¿ä.(°è¼Ó ÀÔ·Â°¡´É)\
+	±ÛÀ» ³¡³»·Á¸é\"end\" ¹®Àå ÀÔ·Â ¶Ç´Â ctrl + c Å°·Î Á¾·áÇÕ´Ï´Ù.");
 
 	while (1)
 	{
 		memset(cbuff,0x00,sizeof(cbuff));
-		findDate(1,cbuff);	/* 	ë‚ ì§œ ìž…ë ¥í•˜ê¸° ì˜ˆì‹œ (ìž…ë ¥í›„)>>>	[2022-01-31 14:03:11] ë©”ëª¨ìž¥ì„ ìž…ë ¥í•˜ì…¨ìŠµë‹ˆë‹¤. */
-		fgets(dbuff,sizeof(dbuff),stdin); /* í•„ìš”ë¬¸ìž¥ ë§Œí¼ ìž…ë ¥ ë°›ê¸°, íŠ¹ìˆ˜ë¬¸ìž ìž…ë ¥ê°€ëŠ¥, ë„ì–´ì“°ê¸° ê°€ëŠ¥, ì¤„ë°”ê¿ˆ ì—”í„° ì¹  ë•Œ ë‹¤ìŒì§„í–‰í•˜ë©´ì„œ ë‚ ì§œ ìž…ë ¥ë¨. */
+		findDate(1,cbuff);	/* 	³¯Â¥ ÀÔ·ÂÇÏ±â ¿¹½Ã (ÀÔ·ÂÈÄ)>>>	[2022-01-31 14:03:11] ¸Þ¸ðÀåÀ» ÀÔ·ÂÇÏ¼Ì½À´Ï´Ù. */
+		fgets(dbuff,sizeof(dbuff),stdin); /* ÇÊ¿ä¹®Àå ¸¸Å­ ÀÔ·Â ¹Þ±â, Æ¯¼ö¹®ÀÚ ÀÔ·Â°¡´É, ¶ç¾î¾²±â °¡´É, ÁÙ¹Ù²Þ ¿£ÅÍ Ä¥ ¶§ ´ÙÀ½ÁøÇàÇÏ¸é¼­ ³¯Â¥ ÀÔ·ÂµÊ. */
 		if(strncmp(dbuff,"end",3)==0 || strncmp(dbuff,"END",3)==0)
 		{
-			printf("ìž…ë ¥ì´ ì¢…ë£Œë˜ì—ˆìŠµë‹ˆë‹¤. \n");
+			printf("ÀÔ·ÂÀÌ Á¾·áµÇ¾ú½À´Ï´Ù. \n");
 			fileWrite("\n");
 			break;
 		}
 		strncat(cbuff,dbuff,sizeof(dbuff));
-		fileWrite(cbuff); /* íŒŒì¼ì— ìž…ë ¥í•˜ê¸° */
+		fileWrite(cbuff); /* ÆÄÀÏ¿¡ ÀÔ·ÂÇÏ±â */
 	}
-	
-	return 0;
+
+		return 0;
 }
 
-int fileWrite(char *file) /* ë©”ëª¨ìž¥ íŒŒì¼ë¡œ ì €ìž¥ í•˜ê¸° */
+int fileWrite(char *file) /* ¸Þ¸ðÀå ÆÄÀÏ·Î ÀúÀå ÇÏ±â */
 {
 	FILE *fp;
 	char ch;
@@ -52,7 +52,7 @@ int fileWrite(char *file) /* ë©”ëª¨ìž¥ íŒŒì¼ë¡œ ì €ìž¥ í•˜ê¸° */
 	fp = fopen(dbuff, "a");
 	if (fp == NULL)
 	{
-		printf("%s íŒŒì¼ì—´ê¸° ì‹¤íŒ¨ \n", file[1]);
+		printf("%s ÆÄÀÏ¿­±â ½ÇÆÐ \n", file[1]);
 		return -1;
 	}
 	fprintf(fp,file);
@@ -72,13 +72,13 @@ int findDate(int Cnum, char *buff)
 #endif
 	if (Cnum ==1)
 	{
-		sprintf(buff,"[%d-%d-%d %d:%d:%2d] ",t->tm_year+1900, t->tm_mon+1, t->tm_mday, t->tm_hour, t->tm_min, t->tm_sec); /* ë‚ ì§œ ë°˜í™˜í•˜ê¸° */
+		sprintf(buff,"[%d-%d-%d %d:%d:%2d] ",t->tm_year+1900, t->tm_mon+1, t->tm_mday, t->tm_hour, t->tm_min, t->tm_sec); /* ³¯Â¥ ¹ÝÈ¯ÇÏ±â */
 		
 	}else if (Cnum==2)
 	{
-		sprintf(buff,"/home/test/memolog/DailyMemo-%d%d%d.log",t->tm_hour, t->tm_min, t->tm_sec); /* ì €ìž¥í•  ì–‘ì‹ ì„ íƒ, ë¦¬ëˆ…ìŠ¤ì˜ ì ˆëŒ€ê²½ë¡œì•ˆì— ì–´ë–¤í˜•ì‹ìœ¼ë¡œ ì €ìž¥í• ì§€ ë§Œë“¬. */
+		sprintf(buff,"/home/test/memolog/DailyMemo-%d%d%d.log",t->tm_hour, t->tm_min, t->tm_sec); /* ÀúÀåÇÒ ¾ç½Ä ¼±ÅÃ, ¸®´ª½ºÀÇ Àý´ë°æ·Î¾È¿¡ ¾î¶²Çü½ÄÀ¸·Î ÀúÀåÇÒÁö ¸¸µë. */
 	}else{
-		printf("ìž…ë ¥ ì˜¤ë¥˜, ì§€ì •ëœ í˜•ì‹ì´ ì•„ë‹ˆê±°ë‚˜ í• ë‹¹í•  ìˆ˜ ì—†ëŠ” ë‚´ìš©ìž…ë‹ˆë‹¤. ë‹¤ì‹œ í™•ì¸í•´ì£¼ì„¸ìš”.");
+		printf("ÀÔ·Â ¿À·ù, ÁöÁ¤µÈ Çü½ÄÀÌ ¾Æ´Ï°Å³ª ÇÒ´çÇÒ ¼ö ¾ø´Â ³»¿ëÀÔ´Ï´Ù. ´Ù½Ã È®ÀÎÇØÁÖ¼¼¿ä.");
 		return -1;
 	}
 
