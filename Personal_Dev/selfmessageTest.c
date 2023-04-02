@@ -59,6 +59,6 @@ int main()
 
     // 서버로부터 응답 받기
     valread = read(sock, buffer, 1024);
-    printf("%s\n", buffer);
+    printf("서버로부터 받은 응답은 : %s\n", buffer);
     return 0;
 }
