@@ -7,11 +7,70 @@
 
 우분투접속
 
-우분투 커멘드 창 열고 받고 싶은 폴더로 들어가서 
-git clone https://github.com/내가설정한깃헙.git 쳐서 클론 다운받기
+다운로드 sudo apt-get install git -y
 
+1. mkdir로 깃을 넣고 싶은 폴더 만들기
+
+2. 유저이름과 이메일 설정
 git config --global user.name 이름
 git config --global user.email 이메일
+
+3. 설정 확인
+git config --list
+
+4.1에서 만든 폴더에 들어가서 git 사용할 환경으로 초기화
+git init
+
+5.내  github repository와 연결하기
+git remote add origin https://github.com/유저이름/프로젝트이름.git
+
+6. 연결확인
+git remote -v
+
+7. 우분투 커멘드 창 열고 받고 싶은 폴더로 들어가서 
+
+깃헙 클론 다운 받는 명령어(연결상태에서)
+git pull origin master
+
+
+-------------------------------------
+---깃헙에 내 코드 업데이트 하는법----
+-------------------------------------
+
+1. git add .  ->이때 .은 전체를의미함
+
+2. git commit -m "저장하고싶은 이력내용"
+
+3. git push origin master
+
+-------------------------------------
+----깃헙으로 팀프로젝트 하는 법 -----
+------------------------------------
+1. 프로젝트 다운받기
+
+git clone https://github.com/내가설정한깃헙.git 쳐서 클론 다운받기
+
+2. 내 브랜치 만들기
+git checkout -b 브랜치 이름
+
+3. 브랜치에 소스코드 업데이트하기
+
+git add .
+git commit -m "이름"
+git push origin 브렌치 이름
+
+4. 마스터브랜치에 소스 가져오기 pull
+get pull origin master
+
+pull 이전에는 기존의소스코드들을 commit을 먼저 해두어야함
+
+5 .브랜치끼리 이동 하는법
+git checkout 브랜치이름
+
+
+---------------------------------
+------ git 사용시 추가설정 ------
+---------------------------------
 
 git config --global credential.helper store
 위의 문장 입력 시 한번 로그인 하면 이후에는 자동 연동 되어 push할 수있음.
@@ -19,11 +78,6 @@ git config --global credential.helper store
 list보기
 
 git config --global --list 
-
-업로드 시
-git add * 또는 git add .
-git commit -m "메세지입력"
-git push
 
 첫 업로드 시 로그인 창 뜨면
 아까 설정한 user.name 입력 후 비밀번호는
