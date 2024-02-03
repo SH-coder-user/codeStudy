@@ -1,0 +1,17 @@
+
+네트워크 프로그램의 흐름
+    송신측
+        소켓 생성 -> 포트부여 -> 상대편 IP/PORT 주소로 연결 -> 통신 -> 종료
+    수신측
+        소켓 생성 -> 포트부여 -> 상대편 연결 기다리기 -> 통신 ->종료
+
+1. 소켓생성
+    인터넷과 연결하기위한 접접 소켓을생성
+    #include <sys/types.h>
+    #include <sys/socket.h>
+    socket(int domain, int type, int protocol);
+    
+    domain : 소켓의 사용 영역을 정의한다.
+    type : 소켓 유형을 정의한다.
+    protocol : 소켓이 사용할 프로토콜을 정의한다.
+    
