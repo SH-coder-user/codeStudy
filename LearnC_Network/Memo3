@@ -12,6 +12,67 @@
     socket(int domain, int type, int protocol);
     
     domain : 소켓의 사용 영역을 정의한다.
+		AF_INET, AF_UNIX
     type : 소켓 유형을 정의한다.
     protocol : 소켓이 사용할 프로토콜을 정의한다.
     
+	type과 protocol은 한쌍으로 움직인다.
+	UDP 통신,TCP통신
+
+	소켓 함수 사용 예
+		1.int fd = socket(AF_INET, SOCK_STREAM, IPPROTO_TCP)
+		2.int fd = socket(AF_INET, SOCK_DGRAM, IPPROTO_UDP)
+	
+2. 소켓에 연결하기
+#include <stdio.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <arpa/inet.h>
+
+int main() {
+    // 소켓 생성
+    int client_socket = socket(AF_INET, SOCK_STREAM, 0);
+    if (client_socket == -1) {
+        perror("Socket creation failed");
+        exit(EXIT_FAILURE);
+    }
+
+    // 연결할 서버 정보 설정
+    struct sockaddr_in server_address;
+    server_address.sin_family = AF_INET;
+    server_address.sin_port = htons(Your_Server_Port);  // 서버의 포트 번호
+    server_address.sin_addr.s_addr = inet_addr("Server_IP_Address"); // 서버의 IP 주소
+
+    // 서버에 연결
+    if (connect(client_socket, (struct sockaddr*)&server_address, sizeof(server_address)) == -1) {
+        perror("Connection failed");
+        exit(EXIT_FAILURE);
+    }
+
+    printf("Connected to the server\n");
+
+    // 여기서부터는 원격 서버와 데이터 송수신이 가능한 상태입니다.
+    
+    // 연결 종료
+    close(client_socket);
+
+    return 0;
+}
+
+위의내용은 연결요청하는 클라이언트 기준
+서버의 프로그램은 위의 흐름에서
+
+connect가 빠지고
+bind ->listen ->accept로 연결을 기다리는 함수를 사용한다.
+	
+	소켓을 인터넷 주소에 묶어둠
+	int bind(int sockfd, struct sockaddr *my_adddr, socklen_t addrlen);
+
+	수신 대기열을 만들기
+	int listen(int queue_size);
+
+	수신대기열에서 연결을 가져오기
+	int accept(int s, struct sockaddr *addr, sodklen_t *addrlen);
+
+유닉스는 파일로 시작해 파일로 끝난다 = 소켓통신에도 동일함.
+
