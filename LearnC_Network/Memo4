@@ -1,0 +1,53 @@
+파일과 소켓
+	파일 열기
+		#include <sys/types.h>
+		#include <sys/stat.h>
+		#include <fcntl.h>
+
+	int open(const char *pathname, int flags);
+	int open(const char *pathname, int flags, mode_t mode);
+
+	fd = open("my.txt", O_RDONLY|O_CREATE,0755);
+
+	O_RDONLY 읽기 전용
+	O_WRONLY 쓰기 전용
+	O_RDWR 읽기/쓰기
+	O_CREATE 파일을 생성
+	O_EXCL 파일이 있는지 검사
+	O_APPEND 추가모드로 열기
+	O_NONBLOCK 비 봉쇄 모드로 열기
+
+	중요! 안쓰는 파일은 반드시 닫아줘야한다. 프로세스는 열 수있는 파일한계가 있다.
+
+읽기/쓰기 버퍼
+	읽기와 쓰기는 바로 이루어지지 않고 버퍼를 공유한다.(커널)
+	디스크 -커널버퍼 -read() -유저버퍼
+
+소켓과 파일
+	소켓도 파일 형식으로 존재한다 
+	read/write와 같은 파일 함수를 그대로 사용할 수있다. 
+	fcntl함수로 제어
+	
+#ls -al /proc/12764/fd
+	
+
+네트워크 바이트 순서
+	cpu는 바이트를 읽는 다른 순서를 가지고 있다.
+	바이트오더가 다른 컴퓨터간 인터넷 통신에는 읽는 순서가 바뀔 수 있다.
+	리틀엔디안
+		작은 숫자부터 순서대로 읽음
+	빅엔디안
+		큰 숫자부터 순서대로 읽음
+	
+	해결방법
+	네트워크 바이트오더 == 빅엔디안으로 통일
+	2byte 이상의 데이터는 바이트오더를 고려해야한다.
+	2byte 
+		ntohs 네트워크 투 호스트
+		htons 호스트 투 네트워크
+	4byte
+		ntohl 네트워크 투 호스트
+		htonl 호스트 투 네트워크
+	
+
+
